@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "googlecloudtools.cloudcode",
+    "google.geminicodeassist",
+    "google.colab",
+    "hashicorp.terraform",
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "pentium10.vscode-gcp-project-switcher",
+    "bitcloudsolutions.vscode-gcp-iap-ssh",
+    "ms-azuretools.vscode-containers",
+    "willasm.obsidian-md-vsc",
+    "streetsidesoftware.code-spell-checker",
+    "editorconfig.editorconfig"
+  ]
+}

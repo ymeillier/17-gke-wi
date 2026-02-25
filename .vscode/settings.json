@@ -1,0 +1,22 @@
+{
+    "workbench.iconTheme": "eq-material-theme-icons",
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "geminicodeassist.project": "",
+    "cloudcode.project": "ai-prototyping-460721",
+    "workbench.startupEditor": "none",
+    "redhat.telemetry.enabled": false,
+    "containerlab.sudoEnabledByDefault": true,
+    "hediet.vscode-drawio.resizeImages": null,
+    "obsidian-md-vsc.defaultVault": "Android-app",
+    "obsidian-md-vsc.defaultVaultPath": "/Users/meillier/Documents/Android-app",
+    "obsidian-md-vsc.defaultNote": "deployment_summary",
+    "diffEditor.maxComputationTime": 0,
+    "editor.largeFileOptimizations": false,
+    "editor.comments.ignoreEmptyLines": false,
+    "geminicodeassist.displayInlineContextHint": false,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "explorer.confirmDragAndDrop": false
+}

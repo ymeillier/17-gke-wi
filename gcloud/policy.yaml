@@ -1,0 +1,4 @@
+name: projects/project-05713/policies/iam.automaticIamGrantsForDefaultServiceAccounts
+spec:
+  rules:
+  - enforce: false
