@@ -682,6 +682,9 @@ kubectl create serviceaccount $KSA_NAME --namespace $NAMESPACE
 
 
 
+# All Principals that one can use for the scope of the SA are listed here: 
+#       https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity#use-iam-conditions
+#       https://docs.cloud.google.com/iam/docs/principal-identifiers
 
 MEMBER="principal://iam.googleapis.com/projects/$PROJECT_NUMBER/locations/global/workloadIdentityPools/${PROJECT_ID}.svc.id.goog/subject/ns/$NAMESPACE/sa/${KSA_NAME}"
 gcloud projects add-iam-policy-binding projects/$PROJECT_ID \
