@@ -2622,10 +2622,10 @@ fi
 
 
 
-printf "▶️  Step: \033[1;32m'GKE Cluster 1 Deployment.'\033[0m Press Enter to Continue\n"
-if [[ "$AUTO_APPROVE" != "true" ]]; then
-    read -r -p ""
-fi
+#printf "▶️  Step: \033[1;32m'GKE Cluster 1 Deployment.'\033[0m Press Enter to Continue\n"
+#if [[ "$AUTO_APPROVE" != "true" ]]; then
+#    read -r -p ""
+#fi
 
 #Default, Just GKE DNS, No ip-based endpoints
         #     --enable-private-nodes \
@@ -2694,28 +2694,28 @@ fi
 # # 4. (Optional) Remove the empty default-pool to keep it clean
 # gcloud container node-pools delete "default-pool" --cluster "$CLUSTER_NAME" --location "${VPC1_SUBNET_REGION_USC1}" --quiet
 # 
-
-
-
-
-
-
-
-
-printf "    ✅ Cluster \033[1;32m$GKE_CLUSTER_NAME\033[0m Created.\n"
-
-
-printf "    ✅ All GKE Clusters setup complete. Press Enter to Continue"
-
-if [[ "$AUTO_APPROVE" != "true" ]]; then
-    read -r -p ""
-fi
+#
+#
+#
+#
+#
+#
+#
+#
+# printf "    ✅ Cluster \033[1;32m$GKE_CLUSTER_NAME\033[0m Created.\n"
+#
+#
+#printf "    ✅ All GKE Clusters setup complete. Press Enter to Continue"
+#
+#if [[ "$AUTO_APPROVE" != "true" ]]; then
+#    read -r -p ""
+#fi
 
 # Write Cluster URL to file
 echo "https://console.cloud.google.com/kubernetes/list/overview?project=$PROJECT_ID" > cluster-url.txt
-echo "https://console.cloud.google.com/networking/networks/list?project=$PROJECT_ID" > vpc-url.txt
+#echo "https://console.cloud.google.com/networking/networks/list?project=$PROJECT_ID" > vpc-url.txt
 
-printf "    ℹ️  Cluster URL saved to: \033[1;32mcluster-url.txt\033[0m\n"
+#printf "    ℹ️  Cluster URL saved to: \033[1;32mcluster-url.txt\033[0m\n"
 
 #Chrome's command line doesn't recognize your email address (the "Display Name") directly. Instead, it uses a folder name like Default, Profile 1, or Profile 2.
 # To get this working, we need to find that folder name first.
@@ -2730,8 +2730,9 @@ printf "    ℹ️  Cluster URL saved to: \033[1;32mcluster-url.txt\033[0m\n"
 # Once you have that name (let's assume it's Profile 3), you can't use the simple open -a command because it doesn't pass arguments correctly to the Chrome binary for profiles. You have to call the Chrome application binary directly.
 # 
 # Use this command:
-# "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --profile-directory="Profile 3" "$(cat vpc-url.txt)"
 
-"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --profile-directory="Profile 4" "$(cat cluster-url.txt)"
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --profile-directory="Profile 3" "$(cat vpc-url.txt)"
+
+#"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --profile-directory="Profile 4" "$(cat cluster-url.txt)"
 
 # open -a "Google Chrome" $(cat cluster-url.txt)

@@ -4,6 +4,8 @@
 VARS_FILE="./.variables"
 source $VARS_FILE
 gcloud config set project $PROJECT_ID
+gcloud auth application-default set-quota-project "$PROJECT_ID"
+gcloud config set billing/quota_project "$PROJECT_ID"
 
 # Function to save variables to file and export them
 save_var() {
@@ -52,7 +54,7 @@ save_var() {
 
 
 
-## Done in main deploy script 
+## Done in main deploy script  00-depoy.sh
 # # 3. Dedicated Service Account for GKE Nodes
 #     printf "    Creating Dedicated Service Account for GKE Nodes...\n"
 # 
@@ -157,7 +159,7 @@ gcloud projects add-iam-policy-binding $PROJECT_ID \
 
 
 
-
+# Create Cluster to replicate the topology covered in the documentation: https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity#identity_sameness
 
 # GKE01: 
 CLUSTER_NAME="cluster-a"
@@ -336,7 +338,7 @@ printf "    ✅ Cluster \033[1;32m$GKE_CLUSTER_NAME\033[0m Created.\n"
 
 
 
-
+# Cluster that use a permissive SA to showcase how we leverage fallback access method (node SA) when WI SA fails to connect.
 CLUSTER_NAME="cluster-fallback"
 gcloud container clusters create "$CLUSTER_NAME" \
     --project "$PROJECT_ID" \
@@ -425,7 +427,7 @@ printf "    ✅ Cluster \033[1;32m$GKE_CLUSTER_NAME\033[0m Created.\n"
 
 
 
-####
+#### Creating cluster to demo Fleet
 # GKE01: 
 CLUSTER_NAME="fleet-gke01"
 gcloud container clusters create "$CLUSTER_NAME" \
@@ -627,6 +629,8 @@ gcloud org-policies set-policy policy.yaml
 #######################################################################################################################################################################
 #######################################################################################################################################################################
 ################################################ WI ################################################################################################################
+
+
 #Verify identity providers (GKE clusters' metadata servers) registered to the WI pool
 # gcloud iam workload-identity-pools providers list \
 # --location="global" \
